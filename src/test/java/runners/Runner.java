@@ -11,9 +11,8 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",},
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@apk",
+        tags = "@browser",
         dryRun = false
-
         /*
          Eger ki featureslarda bizim eksik yani daha once tanimlanmamis(turuncu sekilde gozukmesi) scenriolari belirlemek icin
         eksik adim olup olmadigi dryRun i TRUE yaparak kontrol etmis oluyor
@@ -21,6 +20,9 @@ import org.junit.runner.RunWith;
         kosturmaya hazir oldugu anlamina gelmektedir
 
         Eger ki eksik adimimiz yok ise tum islemleri tamamladigimizda TESTLERIMI KOSTURMAK ICIN DRYRUN'I FALSE yapiyoruz
+
+
+
          */
 )
 

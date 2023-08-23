@@ -71,9 +71,7 @@ public class ReusableMethods {
     public static void scrollWithUiScrollable(String elementText) {
         AndroidDriver driver = (AndroidDriver)  Driver.getAndroidDriver();
         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
-
     }
-
     public static void scrollWithUiScrollableAndClick(String elementText) {
         AndroidDriver driver = (AndroidDriver)  Driver.getAndroidDriver();
         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
@@ -85,6 +83,7 @@ public class ReusableMethods {
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         // TakesScreenshot is an interface of selenium that takes the screenshot
         TakesScreenshot ts = (TakesScreenshot)Driver.getAndroidDriver();
+
         File source = ts.getScreenshotAs(OutputType.FILE);
         // full path to the screenshot location
         String target = System.getProperty("user.dir") + "/target/Screenshots/" + name + date + ".png";
@@ -93,6 +92,4 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
-
-
 }

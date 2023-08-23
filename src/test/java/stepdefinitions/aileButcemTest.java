@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import io.cucumber.java.en.Given;
+import org.junit.Assert;
 import pages.AileButcemPage;
 import utils.Driver;
 import utils.ReusableMethods;
@@ -24,23 +25,26 @@ public class aileButcemTest {
     }
     @Given("uygulamaya kullanici bilgileriyle giris yapildigini dogrulayin")
     public void uygulamaya_kullanici_bilgileriyle_giris_yapildigini_dogrulayin() {
+        Assert.assertTrue(aileButcemPage.basaraliGirisKontrol.isDisplayed());
+    }
+    @Given("sol kisimdaki menuden {string} bolumune gidin")
+    public void sol_kisimdaki_menuden_hesabim_bolumune_gidin(String hesabimText) throws InterruptedException {
+        Thread.sleep(5000);
+        ReusableMethods.koordinatTiklama(117,135,1000);
+        ReusableMethods.scrollWithUiScrollableAndClick(hesabimText);
+    }
+    @Given("hesabim sayfasindaki bilgileri degistirerek {string} {string} {string} {string} {string} degisikleri kaydedin {string}")
+    public void hesabim_sayfasindaki_bilgileri_degistirerek_degisikleri_kaydedin(String name,String surname,String city,String age,String job,String kaydetButon) throws InterruptedException {
+        aileButcemPage.boxClear();
+        aileButcemPage.editBoxes(name,surname,city,age,job);
+        ReusableMethods.scrollWithUiScrollableAndClick(kaydetButon);
+        aileButcemPage.assertionBox(name, surname, city, age, job);
 
     }
-    @Given("sol kisimdaki menuden hesabim bolumune gidin")
-    public void sol_kisimdaki_menuden_hesabim_bolumune_gidin() {
 
-    }
-    @Given("hesabim sayfasindaki bilgileri degistirerek degisikleri kaydedin")
-    public void hesabim_sayfasindaki_bilgileri_degistirerek_degisikleri_kaydedin() {
-
-    }
-    @Given("ardindan degisiklerin yapildigini dogrulayin")
-    public void ardindan_degisiklerin_yapildigini_dogrulayin() {
-
-    }
     @Given("Kullanici uygulamayi kapatir")
     public void kullanici_uygulamayi_kapatir() {
-
+        Driver.quitAppiumDriver();
     }
 
 }

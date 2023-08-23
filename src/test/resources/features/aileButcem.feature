@@ -5,9 +5,8 @@ Feature: Kullanici aile butcem uygulamasindaki fonksiyonlari test eder
 
     * Kullanici ilgili kurulumlari tamamlayarak 2000 cihazla baglantisini gerceklestirir
     * ilk ekran ayarlarini yapin ve ardindan "Giriş Yap" login sayfasina ulasin
-    * "mail2" ve "password2" "Giriş Yap" bilgilerini girerek kullanici bilgileriyle giris yapin
+    * "mail" ve "password" "Giriş Yap" bilgilerini girerek kullanici bilgileriyle giris yapin
     * uygulamaya kullanici bilgileriyle giris yapildigini dogrulayin
-    * sol kisimdaki menuden hesabim bolumune gidin
-    * hesabim sayfasindaki bilgileri degistirerek degisikleri kaydedin
-    * ardindan degisiklerin yapildigini dogrulayin
+    * sol kisimdaki menuden "Hesabım" bolumune gidin
+    * hesabim sayfasindaki bilgileri degistirerek "T116" "Appium" "Istanbul" "30" "QA Tester" degisikleri kaydedin "Kaydet"
     * Kullanici uygulamayi kapatir
